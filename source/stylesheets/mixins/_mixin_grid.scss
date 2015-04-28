@@ -1,0 +1,57 @@
+@mixin generate-grid-spans($breakpoint, $cols: 12) {
+
+  // Set the width to the passed in $breakpoint
+  // in case it's just a width
+  $width: $breakpoint !default;
+
+  // If it's a map get the value from the map
+  @if length( $breakpoint ) > 1 {
+    $map: nth($breakpoint,1);
+    $breakpoint: nth($breakpoint,2);
+    $width: map-get( $map, $breakpoint  );
+  }
+
+  // For each column
+  @for $i from 1 through $cols {
+
+    // Define the classname to be overridden
+    // as it can't be defined within an @if @else
+    $bpname: "" !default;
+
+    // Don't print the breakpoint if false
+    @if $breakpoint != false {
+      $bpname: "-at-#{$breakpoint}";
+    }
+
+    // Generate a name based on the loop number and the breakpoint specified
+    // If the breakpoint is a px value then it will be 400
+    .grid-span-#{$i}#{$bpname} {
+
+      // Generate a percentage value for the column width
+      $result: percentage( $i / $cols );
+
+      width: $result;
+
+      // Only add helper classes for widths less than 100%
+      @if $result < 100% {
+
+        // Only calculate the opposing widths for each column (most common)
+        // So with 12 cols, `col-1` has a `-push-11` and `col-11` has a `-pull-1`
+        // At 50% both the `-push-*` and `-pull-*` are available.
+
+        // You can generate *all* the push / pull classes by having this
+        // within another '@for' loop for the columns.
+
+        // Helper classes for reordering
+        &.-push-#{$cols - $i}#{$bpname} {
+          position: relative;
+          left: 100% - $result;
+        }
+        &.-pull-#{$cols - $i}#{$bpname} {
+          position: relative;
+          left: - (100% - $result);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+$badge-font-size: size( batman );
+$badge-small-font-size: size( flash );
+
+.badge {
+  @include height($badge-font-size, 32px, 'all');
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: $radius;
+  background-color: rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: bold;
+   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.badge.-small {
+  @include height($badge-small-font-size, 24px);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.badge.-before {
+  margin-right: $baseline/2;
+}
+
+.badge.-after {
+  margin-left: $baseline/2;
+}

@@ -1,0 +1,45 @@
+$ico-large-font-size: size( superman );
+
+// Icon component
+.ico {
+  display: inline-block;
+  font-style: normal;
+  text-align: center;
+  vertical-align: text-top;
+
+  &:before {
+    vertical-align: text-top;
+  }
+}
+
+.ico.-offset {
+  position: relative;
+  top: 3px;
+}
+
+.ico-16 {
+  width: $baseline;
+}
+
+// Icon positioning
+.ico.-right {
+  float: right;
+  display: block;
+}
+
+.ico.-left {
+  float: left;
+  display: block;
+}
+
+.ico.-before {
+  margin-right: $baseline/2;
+}
+
+.ico.-after {
+  margin-left: $baseline/2;
+}
+
+.ico.-large {
+  font-size: $ico-large-font-size;
+}

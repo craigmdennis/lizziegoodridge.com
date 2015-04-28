@@ -1,0 +1,34 @@
+// Wrap in a mixin so we can call it
+// with the rest of the notices
+@mixin colours($map: $colours) {
+
+  // Iterate through the button map
+  @each $name, $attributes in $map {
+
+    // When using gulp-sass we need to do this
+    // due to some strange interpolation issues
+    $modifier: "-#{$name}";
+
+    // Icons are different as we don't want a background or border
+    .ico.#{$modifier} {
+      color: nth($attributes,1);
+    }
+
+    // Use the first value as the class name
+    .#{$name} {
+
+      // Use the other values in order
+      background-color: nth($attributes,1);
+      color: nth($attributes,3);
+
+      // If false then the border colour is the same as the background
+      border-color: if( nth($attributes,2), nth($attributes,2), nth($attributes,1));
+    }
+
+  }
+}
+
+// A helper function to get colour values
+@function color( $name ) {
+  @return nth(map-get( $colours, $name ), 1);
+}

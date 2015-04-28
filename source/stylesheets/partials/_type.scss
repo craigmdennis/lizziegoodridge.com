@@ -1,0 +1,36 @@
+$body-color: $onyx;
+
+$title-font-size-small: size(superman);
+$title-font-size-large: size(ironman);
+
+$global-link-color: $brand;
+
+// Generate helper classes for type
+@include sizes;
+
+body {
+  font-family: $body-font-stack;
+  font-size: $base-font-size; // 16px
+  line-height: $base-line-height; // 24px
+  color: $body-color;
+  font-weight: 400;
+}
+
+a,
+.link {
+  color: $global-link-color;
+}
+
+.inherit {
+  color: inherit;
+}
+
+.title {
+  font-family: $heading-font-stack;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.t-center {
+  text-align: center;
+}

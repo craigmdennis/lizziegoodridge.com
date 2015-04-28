@@ -1,0 +1,78 @@
+$media-title-font-size: size( batman );
+$media-subtitle-font-size: size( spiderman );
+
+.media {
+  @include upto( snoop ) {
+    flex-direction: column;
+  }
+
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.media-figure {
+  position: relative;
+  margin-right: $baseline/2;
+
+  img {
+    border-radius: $radius;
+  }
+}
+
+.media-body {
+  flex: 1;
+}
+
+.media-body,
+.media-body :last-child {
+  margin-bottom: 0;
+}
+
+.media-title {
+  @include height( $media-title-font-size);
+  @include upto( snoop ) {
+    margin-top: 1.35rem;
+  }
+  margin-bottom: $baseline/2;
+}
+
+.media-subtitle {
+  @include height( $media-subtitle-font-size );
+  margin-top: -0.5rem;
+}
+
+.media-title > a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.media-figure > img {
+  display: block;
+}
+
+// Modifiers
+.media.-reversed > .media-figure {
+  order: 2;
+  margin: 0 0 0 $baseline/4;
+}
+
+.media.-top {
+  align-self: flex-start;
+}
+
+.media.-bottom {
+  align-self: flex-end;
+}
+
+.media.-vcenter {
+  align-items: center;
+}
+
+.media.-stacked {
+  flex-direction: column;
+}

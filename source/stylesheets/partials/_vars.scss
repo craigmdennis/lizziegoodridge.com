@@ -1,0 +1,94 @@
+// ===================================================
+// Variables
+//
+// Global variables are in this file.
+// When you come to use a variable in a module you
+// will need to create a variable scoped to that
+// module and assign it a value from below.
+//
+// This reduces the likelihood of variations creeping
+// in with things like colours and font sizes.
+
+// Greys
+// Names of colours http://name-of-color.com/
+$white: #FFFFFF;
+$desert-storm: #F8F8F8;
+$alto: #DBDBDB;
+$gallery: #F0F0F0;
+$onyx: #111111;
+$storm-dust: #5F6060;
+
+// Colours
+$carmine-pink: #E74C3C;
+$tree-poppy: #F39C12;
+$ufo-green: #2ECC71;
+$lemon-chiffon: #FFF9CF;
+$curious-blue: #2F9ED8;
+$zombie: #E2D896;
+
+// Brand
+$brand: #FF0000;
+
+// Type
+$base-font-size: 100%; // 16px
+$base-line-height: 1.5; // 24px
+$baseline: $base-line-height + 0rem; // 24px
+$body-font-stack: "Open Sans", Helvetica, Arial, sans-serif;
+$heading-font-stack: "Gotham Black", "Open Sans", sans-serif;
+
+// Misc
+$shadow: 0 1px 1px 0 rgba(0,0,0,0.05);
+$shadow-inset: inset 0 1px 1px 0 rgba(0,0,0,0.1);
+$radius: 3px;
+
+// Animations
+$duration: 200ms;
+$inOutQuad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
+// Helper colours
+// -classname, background-color, border-color, color
+$colours: (
+  success: ($ufo-green, false, $white),
+  warning: ($tree-poppy, false, $white),
+  danger: ($carmine-pink, false, $white),
+  info: ($curious-blue, false, $white)
+);
+
+// Font Sizes
+// Names of superheroes
+// Values converted to REMS by sass-height mixin
+$sizes: (
+  hulk: 54px,
+  ironman: 36px,
+  superman: 20px,
+  deadpool: 18px,
+  batman: 16px,
+  spiderman: 14px,
+  antman: 12px,
+  flash: 10px
+);
+
+// Layouts
+// Names of (w)rappers
+$bp: (
+  snoop: 320px,
+  eminem: 480px,
+  diddy: 600px,
+  dre: 768px,
+  dmx: 800px,
+  kanye: 900px,
+  jarule: 1280px
+);
+
+// Z Indices
+$z: (
+  ground: -3000,
+  basement: -2000,
+  floor: -1000,
+  table: 0,
+  bottom_bun: 1000,
+  condiment: 2000,
+  cheese: 3000,
+  meat: 4000,
+  top_bun: 5000
+);

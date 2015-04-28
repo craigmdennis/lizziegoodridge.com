@@ -1,0 +1,20 @@
+{
+  "name": "frustrateddesigner.com",
+  "version": "0.0.0",
+  "homepage": "http://frustrateddesigner.com",
+  "authors": [
+    "Craig Dennis <craigmdennis@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sass-height": "~1.4.0",
+    "what-input": "*"
+  }
+}

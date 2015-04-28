@@ -1,0 +1,27 @@
+// Wrap in a mixin so we can call it
+// with the rest of the notices
+@mixin sizes($map: $sizes) {
+
+  // Iterate through the size map
+  @each $name, $size in $map {
+
+    // Assign the class based on the map
+    .t-#{$name} {
+
+      // Use the height mixin if it exists
+      @if mixin-exists( height ) {
+        @include height( $size );
+      }
+
+      // Otherwise just add font-size
+      @else {
+        font-size: $size;
+      }
+    }
+  }
+}
+
+// A helper function to get size values
+@function size( $name ) {
+  @return map-get( $sizes, $name );
+}

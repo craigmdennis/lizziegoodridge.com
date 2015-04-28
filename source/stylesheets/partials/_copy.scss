@@ -1,0 +1,28 @@
+// For WYSIWYG content without classes
+.copy {
+
+  h1,h2,h3 {
+    font-family: $heading-font-stack;
+  }
+
+  p, ul, ol, pre, table, blockquote {
+    margin-top: $baseline;
+    margin-bottom: $baseline;
+  }
+
+  ul ul, ol ol, ul ol, ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+  }
+
+  sub {
+    top: 0.4em;
+  }
+
+}
