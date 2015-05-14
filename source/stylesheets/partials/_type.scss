@@ -1,7 +1,7 @@
 $body-color: $onyx;
 
-$title-font-size-small: size(superman);
-$title-font-size-large: size(ironman);
+$title-font-size-small: size(ironman);
+$title-font-size-large: size(hulk);
 
 $global-link-color: $brand;
 
@@ -26,9 +26,15 @@ a,
 }
 
 .title {
-  font-family: $heading-font-stack;
+  @include height( $title-font-size-small );
+  font-family: $decoration-font-stack;
   font-weight: 900;
   text-transform: uppercase;
+  margin-bottom: 0;
+
+  @include at( dre ) {
+    @include height( $title-font-size-large );
+  }
 }
 
 .t-center {
