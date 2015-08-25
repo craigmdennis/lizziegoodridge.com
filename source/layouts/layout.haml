@@ -1,20 +1,22 @@
-!!! 5
-%html
+!!!
+%html{:lang => "en"}
   %head
-    %meta{charset: "utf-8"}
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => current_page.data.description, :name => "description"}/
+    %meta{:content => "Lizzie Goodridge", :name => "author"}/
+    %title= current_page.data.title + " &mdash; Performer" || "Lizzie Goodridge &mdash; Performer"
 
-    -# Always force latest IE rendering engine or request Chrome Frame
-    %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    = stylesheet_link_tag "app.css"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Montserrat:400,700"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 
-    -# Mobile viewport
-    %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
-
-    -# Use title if it's in the page YAML frontmatter
-    %title= current_page.data.title || "Lizzie Goodridge | Performer"
-
-    = stylesheet_link_tag "application"
-
-  %body{class: "#{page_classes}"}
+  %body#page-top.index{class: "#{page_classes}"}
+    = partial "partials/nav"
     = yield
-
-    = javascript_include_tag  "application"
+    = partial "partials/footer"
+    = partial "partials/gallery_modals"
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+    = javascript_include_tag "app.js"

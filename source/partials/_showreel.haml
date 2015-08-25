@@ -1,0 +1,14 @@
+/ Portfolio Grid Section
+- if current_page.data.showreel
+  %section#showreel
+    .container
+      .row
+        .col-lg-12.text-center
+          %h2 Showreel
+          %hr.star-primary/
+
+      .row
+        - current_page.data.showreel.each do |video|
+          .col-sm-6.portfolio-item
+            .embed-responsive.embed-responsive-16by9
+              %iframe{ src: video, frameborder: 0, allowfullscreen: true }

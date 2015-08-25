@@ -1,0 +1,14 @@
+%header
+  .container
+    .row
+      .col-lg-12
+
+        = image_tag current_page.data.avatar, class: "img-responsive"
+
+        - if current_page.data.title || current_page.data.spotlight
+          .intro-text
+            - if current_page.data.title 
+              %span.name= current_page.data.title
+              %hr.star-light/
+            - if current_page.data.spotlight
+              = link_to current_page.data.spotlight, "http://spotlight.com/#{current_page.data.spotlight}", class: "skills"

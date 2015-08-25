@@ -1,0 +1,20 @@
+- if current_page.data.gallery
+  - current_page.data.gallery.each_with_index do |image, index|
+    %div.portfolio-modal.modal.fade{id: "portfolioModal#{index}", "aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+      .modal-content
+        .close-modal{"data-dismiss" => "modal"}
+          .lr
+            .rl
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .modal-body
+                - if image['title']
+                  %h2= image['title']
+                %hr.star-primary/
+                = image_tag "gallery/#{image['src']}", class: "img-responsive img-centered"
+                - if image['description']
+                  %p= image['description']
+                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                  %i.fa.fa-times
+                  Close

@@ -1,8 +1,0 @@
-// Simplify positioning
-@mixin pos($pos: fixed, $t:0, $r:0, $b:0, $l:0) {
-  position: $pos;
-  top: $t;
-  right: $r;
-  bottom: $b;
-  left: $l;
-}

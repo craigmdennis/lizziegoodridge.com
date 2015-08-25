@@ -1,24 +1,47 @@
--# ---
--# title: Lizzie Goodridge
--# ---
+---
+title: Lizzie Goodridge
 
+description: Lizzie is a performer currently working in industry. She trained for three years at Mandy Ellen Performing Arts under the direction of Mandy Ellen.
 
-.l-constrained
-  .l-inner
-    .t-center
+about: Lizzie is a performer currently working in industry. She trained for three years at Mandy Ellen Performing Arts under the direction of Mandy Ellen.
 
-      .copy
-        = image_tag 'lizzie-goodridge-performer-headshot.jpg'
-      %h1.title Lizzie Goodridge
+spotlight: 4775-7861-7001
 
-      .copy
-        %p Lizzie is a performer currently working in industry. She trained for three years at Mandy Ellen Performing Arts under the direction of Mandy Ellen.
+avatar: avatar.jpg
 
-        %h4
-          Spotlight PIN
-          = link_to '4775-7861-7001', 'http://www.spotlight.com/4775-7861-7001'
+gallery: 
+  - 
+    title: Headshot 1
+    description: This is an optional description
+    src: 1.jpg
+  -
+    title: Headshot 2
+    description: This is an optional description
+    src: 2.jpg
+  -
+    title: Headshot 3
+    description: This is an optional description
+    src: 3.jpg
 
+showreel:
+  - "https://www.youtube.com/embed/TLrhS8CXUPM"
+  - "https://www.youtube.com/embed/pZNNmydzfZ4"
 
-      %iframe{ width: 420, height: 315, src: "https://www.youtube.com/embed/TLrhS8CXUPM", frameborder: 0, allowfullscreen: true }
+---
 
-      %iframe{ width: 420, height: 315, src: "https://www.youtube.com/embed/pZNNmydzfZ4", frameborder: 0, allowfullscreen: true }
+= partial "partials/header"
+= partial "partials/gallery"
+
+%section#about.success
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2 About
+        %hr.star-light/
+    .row
+      .col-sm-12.text-center
+        %p= current_page.data.about
+
+= partial "partials/showreel"
+
+= partial "partials/contact"

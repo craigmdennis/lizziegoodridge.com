@@ -1,0 +1,17 @@
+/ Portfolio Grid Section
+- if current_page.data.gallery
+  %section#portfolio
+    .container
+      .row
+        .col-lg-12.text-center
+          %h2 Gallery
+          %hr.star-primary/
+
+      .row
+        - current_page.data.gallery.each_with_index do |image, index|
+          .col-sm-4.portfolio-item
+            %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal#{index}"}
+              .caption
+                .caption-content
+                  %i.fa.fa-search-plus.fa-3x
+              %img.img-responsive{:alt => "", :src => "images/gallery/#{image['src']}"}/

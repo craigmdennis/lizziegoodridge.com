@@ -74,3 +74,9 @@ activate :deploy do |deploy|
   deploy.build_before = true
   deploy.commit_message = 'New version deployed at `timestamp`'
 end
+
+after_build do |builder|
+  src = File.join(config[:source],"contact_me.php")
+  dst = File.join(config[:build_dir],"contact_me.php")
+  builder.source_paths << File.dirname(__FILE__)
+  builde
