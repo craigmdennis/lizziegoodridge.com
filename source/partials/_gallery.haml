@@ -9,7 +9,8 @@
 
       .row
         - current_page.data.gallery.each_with_index do |image, index|
-          .col-sm-4.portfolio-item
+          .portfolio-item{class: (index < 2 ? "col-sm-6" : "col-sm-4") }
+
             %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal#{index}"}
               .caption
                 .caption-content

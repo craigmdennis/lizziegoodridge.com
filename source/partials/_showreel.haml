@@ -8,7 +8,12 @@
           %hr.star-primary/
 
       .row
-        - current_page.data.showreel.each do |video|
+        - current_page.data.showreel.each_with_index do |video, index|
           .col-sm-6.portfolio-item
             .embed-responsive.embed-responsive-16by9
               %iframe{ src: video, frameborder: 0, allowfullscreen: true }
+
+      .row
+        .col-sm-6.col-sm-push-3.portfolio-item
+          .embed-responsive.embed-responsive-16by9
+            %iframe{ src: "https://www.youtube.com/embed/uCjfG5-U-EY", frameborder: 0, allowfullscreen: true }

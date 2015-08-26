@@ -1,9 +1,7 @@
 ---
 title: Lizzie Goodridge
 
-description: Lizzie is a performer currently working in industry. She trained for three years at Mandy Ellen Performing Arts under the direction of Mandy Ellen.
-
-about: Lizzie is a performer currently working in industry. She trained for three years at Mandy Ellen Performing Arts under the direction of Mandy Ellen.
+description: Lizzie is a skilled Musical Theatre Performer, graduate of 2014 at MEPA, she trained under the direction of Mandy Ellen. 
 
 spotlight: 4775-7861-7001
 
@@ -12,16 +10,25 @@ avatar: avatar.jpg
 gallery: 
   - 
     title: Headshot 1
-    description: This is an optional description
     src: 1.jpg
   -
     title: Headshot 2
-    description: This is an optional description
     src: 2.jpg
   -
     title: Headshot 3
-    description: This is an optional description
     src: 3.jpg
+  -
+    title: Headshot 4
+    src: 4.jpg
+  -
+    title: Headshot 5
+    src: 5.jpg
+  -
+    title: Headshot 6
+    src: 6.jpg
+  -
+    title: Headshot 7
+    src: 7.jpg
 
 showreel:
   - "https://www.youtube.com/embed/TLrhS8CXUPM"
@@ -39,8 +46,20 @@ showreel:
         %h2 About
         %hr.star-light/
     .row
-      .col-sm-12.text-center
-        %p= current_page.data.about
+      .col-sm-8.col-sm-push-2.text-center
+        %p= current_page.data.description
+        %p
+          To find out more about Lizzie view her 
+          =link_to "interactive CV", "http://www.spotlight.com/4775-7861-7001"
+        %p
+          Or alternatively visit her 
+          =link_to "Casting Call Pro", "http://www.castingcallpro.com/uk/presenter/profile/lizzie-goodridge" 
+          profile.
+
+        %p
+          Lizzie is also a Professional Voice Over Artist. Visit her 
+          =link_to "PieHole profile", "www.piehole.co.uk/lizziegoodridge" 
+          for more details.
 
 = partial "partials/showreel"
 
