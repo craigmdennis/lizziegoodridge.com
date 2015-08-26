@@ -15,7 +15,9 @@
 
   %body#page-top.index{class: "#{page_classes}"}
     = partial "partials/nav"
+    
     = yield
+
     = partial "partials/footer"
     = partial "partials/gallery_modals"
     = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
